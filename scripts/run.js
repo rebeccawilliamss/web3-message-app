@@ -26,6 +26,11 @@ const main = async () => {
     await msgTxn.wait();
 
     msgCount = await waveContract.getTotalMessages();
+
+    msgTxn = await waveContract.connect(randomPerson).message();
+    await msgTxn.wait();
+
+    msgCount = await waveContract.getTotalMessages();
 };
 
 
