@@ -1,5 +1,8 @@
 const main = async () => {
 
+    // Get wallet address of contract owner and random address
+    const [owner, randomPerson] = await hre.ethers.getSigners();
+
     // Compile the contract and generate files
     const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
 
@@ -11,7 +14,20 @@ const main = async () => {
 
     // Gives us the address of the deployed contract
     console.log("Contract deployed to:", waveContract.address);
+
+    // View the address of the person deploying the contract
+    console.log("Contract deployed by:", owner.address);
+
+    // Call the functions
+    let msgCount;
+    msgCount = await waveContract.getTotalMessages();
+
+    let msgTxn = await waveContract.message();
+    await msgTxn.wait();
+
+    msgCount = await waveContract.getTotalMessages();
 };
+
 
 const runMain = async () => {
     try {
