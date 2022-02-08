@@ -9,3 +9,5 @@ contract WavePortal {
         console.log("I am a smart contract");
     }
 }
+
+// comment
