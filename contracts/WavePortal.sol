@@ -10,11 +10,6 @@ contract WavePortal {
     constructor() {
         console.log("I am a smart contract");
     }
-<<<<<<< HEAD
-}
-
-// comment
-=======
 
     function message() public {
         totalMessages += 1;
@@ -28,4 +23,3 @@ contract WavePortal {
         return totalMessages;
     }
 }
->>>>>>> a98f32a2e3d560abe4a34a03563a693adfbc2d16
